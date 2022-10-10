@@ -1,33 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants'
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { StyleSheet, Text, View,  } from 'react-native';
 import repositories from './src/data/repositories';
 import Encabezado from './src/components/encabezado';
 import ModalC from './src/components/modal';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 export default function App() {
+   
   return (
 
     <View style={styles3.container}>
       <Encabezado ></Encabezado>
-      <Text style={styles3.titlesecon}>Lista de planetas del sistema solar</Text>
 
-      <FlatList   style={styles3.itemconten}
-      data={repositories} 
-      ItemSeparatorComponent={() => <Text> </Text>}
-      renderItem={({ item: repo }) => (
-
-        <View  style={styles3.items} key={repo.id}>
-          <Text style={styles3.itemname}>{repo.name}</Text>
-          <Image style={styles3.imgstyle}  source={{uri:repo.uri}} />
-          <Text style={styles3.texto}>{repo.descripcion}</Text>
-      <ModalC></ModalC>
-      
-        </View>
-
-      )}
-       />
-      <StatusBar style="auto" />
     </View>
 
   );
